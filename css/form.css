@@ -1,0 +1,632 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: inherit !important;
+  }
+  
+  nav {
+    background-color: white !important;
+  }
+  
+  .previous {
+    color: #0F141E;
+    border: 1px solid #0F141E;
+    background-color: transparent;
+  }
+  
+  .previous:hover {
+    color: #FC6536;
+    border: 1px solid #FC6536;
+    background-color: transparent;
+  }
+  
+  .radio {
+    margin-top: 16px;
+    grid-column: span 6;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+  }
+  .radio .big {
+    display: flex;
+    gap: 8px;
+    margin-left: 8px;
+    margin-top: 16px;
+  }
+  .radio .big label{
+      margin-right:16px;
+  }
+  .radio .big div {
+    display: flex;
+    align-items: center;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .radio u {
+    text-decoration: none;
+    color: #b11f23;
+  }
+  .radio label {
+    margin-top: 0;
+    padding-left: 0;
+    margin-left: 8px;
+  }
+  
+  input[type=radio] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: currentColor;
+    width: 22px !important;
+    height: 22px;
+    border: 1px solid #626262;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  input[type=radio]::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #FC6536;
+  }
+  
+  input[type=radio]:checked::before {
+    transform: scale(1);
+  }
+  
+  /* Style the input fields */
+  input, select {
+    width: calc(100% - 32px);
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    padding: 0;
+    border: 0;
+    padding: 16px;
+    box-sizing: border-box !important;
+  }
+  
+  .arrow {
+    position: absolute;
+    right: 16px;
+    bottom: 28px;
+  }
+  
+  .arrow::after {
+    margin-top: -2px;
+    margin-left: 6px;
+    transform: rotate(-45deg);
+  }
+  
+  .arrow::before, .arrow::after {
+    content: "";
+    display: block;
+    width: 9px;
+    border-radius: 50px;
+    height: 1.5px;
+    background: #626262;
+  }
+  
+  .arrow::before {
+    transform: rotate(45deg);
+  }
+  
+  select::-ms-expand {
+    display: none;
+  }
+   #pdf-pop{
+      grid-column: span 12;
+      display: block;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .pdf-active{
+      display: flex;
+    }
+    
+  fieldset{
+  border:0px;
+  padding:0;
+  }
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid, select.invalid {
+    background-color: #ffdddd !important;
+  }
+  
+  label.invalid {
+    color: #FC6536;
+  }
+  #search-arangment-error{
+    font-family: "Manrope";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0F141E;
+      opacity: 0.8;
+  }
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+    grid-column: span 12;
+    margin-top: 48px;
+  }
+  .tab h6 {
+    grid-column: span 12;
+    margin-bottom: 8px;
+  }
+  
+  .tab-background {
+    background-color: #F8F8F8;
+    padding: 48px;
+    grid-column: span 12;
+    padding-top: 32px;
+    border-radius: 16px;
+  }
+  .tab-background h6 {
+    margin-top: 16px;
+  }
+  .tab-background input, .tab-background select {
+    background-color: white;
+    width: 100%;
+  }
+  .tab-background .active-option {
+    background-color: white !important;
+  }
+  
+  .tab-background2 {
+    margin-top: 48px;
+  }
+  
+  p {
+    grid-column: span 6;
+    position: relative;
+  }
+  p u {
+    text-decoration: none;
+    color: #b11f23;
+  }
+  
+  .full {
+    grid-column: span 12;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  h2 {
+    text-align: center;
+    grid-column: span 12;
+    margin-top: 140px;
+    margin-bottom: 24px;
+  }
+  
+  .steps {
+    grid-column: span 12;
+    display: flex;
+  }
+  
+  .step {
+    width: 25%;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #bbbbbb;
+    color: white;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .pdf-pop {
+    grid-column: span 12;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .pdf-active {
+    display: flex;
+  }
+  
+  .pdf-pop-inner {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pdf-pop-inner img {
+    height: 62px;
+    width: auto;
+  }
+  .pdf-pop-inner div {
+    text-decoration: none;
+  }
+  
+  .pdf-pop-inner:hover {
+    background-color: #c9c9c9;
+  }
+  
+  /* Mark the active step: */
+  #show-more {
+    cursor: pointer;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FC6536;
+    text-decoration-line: underline;
+    margin-top: 16px;
+  }
+  
+  .show-more-text {
+    display: none;
+  }
+  
+  .show-more-active {
+    display: flex;
+  }
+  
+  .step:nth-child(1).active-u, .step:nth-child(1).finish {
+    opacity: 1;
+    background-color: #b11f23;
+  }
+  
+  .step:nth-child(2).active-u, .step:nth-child(2).finish {
+    opacity: 1;
+    background-color: #f3a51e;
+  }
+  
+  .step:nth-child(3).active-u, .step:nth-child(3).finish {
+    opacity: 1;
+    background-color: #7c2d83;
+  }
+  
+  .step:nth-child(4).active-u, .step:nth-child(4).finish {
+    opacity: 1;
+    background-color: #28397e;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  select:focus, input:focus {
+    outline: none;
+  }
+  
+  .flatpickr-calendar {
+    font-family: "Manrope";
+  }
+  .flatpickr-calendar .selected {
+    background: #FC6536 !important;
+    border-color: #FC6536 !important;
+  }
+  
+  label {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+    opacity: 0.8;
+  }
+  
+  input {
+    margin-top: 8px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+  }
+  
+  input::-moz-placeholder {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+    opacity: 0.4;
+  }
+  
+  input::placeholder, select {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+    opacity: 0.4;
+  }
+  
+  select {
+    width: 100%;
+    margin-top: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    opacity: 1;
+    color: #6e6e6e;
+  }
+  
+  option {
+    color: #0F141E;
+  }
+  
+  option:disabled {
+    color: #626262;
+  }
+  
+  .upit-button-close {
+    box-sizing: border-box !important;
+  }
+  
+  .buttonsNP {
+    grid-column: span 12;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    box-sizing: border-box !important;
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+    grid-column: span 12;
+  }
+  .checkbox .psmall {
+    margin-left: 8px;
+  }
+  
+  input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+  }
+  
+  .blue {
+    font-family: "Manrope";
+    margin-top: 0;
+    color: rgb(13, 110, 253);
+  }
+  
+  .full.radio label {
+    margin-left: 0;
+  }
+  .full.radio .big {
+    margin-left: 0;
+    margin-bottom: 16px;
+  }
+  .full.radio input {
+    margin-right: 8px;
+  }
+  
+  .opis {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0F141E;
+    grid-column: span 12;
+  }
+  .opis h6 {
+    margin-top: 24px;
+  }
+  
+  .checkbox3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .active-option {
+    color: #0F141E;
+    background-color: #F8F8F8 !important;
+  }
+  
+  .pmedium.invalid {
+    color: #FC6536;
+  }
+  
+  .form-check-flex {
+    display: none;
+  }
+  
+  .form-check .form-check-none {
+    display: none;
+  }
+  .form-check .form-check-flex {
+    display: flex;
+  }
+  
+  .bold {
+    font-family: "Manrope";
+    margin-top: 0;
+  }
+  
+  .red {
+    font-family: "Manrope";
+    color: red;
+    margin-top: 0;
+  }
+  #submitBtn{
+    display: none;
+  }
+  .loader {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loader-wheel {
+    animation: spin 1s infinite linear;
+    border: 2px solid rgba(22, 22, 22, 0.5);
+    border-left: 4px solid #0F141E;
+    border-radius: 50%;
+    height: 100px;
+    margin-bottom: 20px;
+    width: 100px;
+  }
+  
+  .loader-text {
+    color: #0F141E;
+    font-family: "Manrope";
+  }
+  
+  .loader-text:after {
+    content: "Loading";
+    animation: load 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load {
+    0% {
+      content: "Loading";
+    }
+    33% {
+      content: "Loading.";
+    }
+    67% {
+      content: "Loading..";
+    }
+    100% {
+      content: "Loading...";
+    }
+  }
+  .loading {
+    min-height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 15;
+  }
+  .loading .maxw-inner {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .loading .maxw {
+    z-index: 12;
+    width: 655px;
+    margin: auto;
+    display: flex;
+  }
+  .error-1, .error-2 {
+    min-height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 15;
+  }
+  .error-1 .maxw-inner, .error-2 .maxw-inner {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .error-1 img, .error-2 img {
+    height: 88px;
+    transform: scaleX(-1);
+  }
+  .error-1 .maxw, .error-2 .maxw {
+    z-index: 12;
+    width: 655px;
+    margin: auto;
+    display: flex;
+  }
+  .error-1 h4, .error-2 h4 {
+    margin-top: 32px;
+  }
+  .error-1 button, .error-2 button {
+    padding: 19px 39px;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 64px;
+    border: 1px solid #0F141E;
+    background-color: #fff;
+    color: #0F141E;
+  }
+  .error-1 button:focus, .error-2 button:focus {
+    border: 1px solid #6C6F75;
+    color: #6C6F75;
+  }
+  .error-1 button:hover, .error-2 button:hover {
+    border: 1px solid #FC6536;
+    color: #FC6536;
+  }
+  .error-1 button:disabled, .error-2 button:disabled {
+    opacity: 0.2;
+  }
+  .error-1 .plarge, .error-2 .plarge {
+    color: #626262;
+    width: 60%;
+    margin-top: 8px;
+  }
+  .active-upit {
+    display: flex;
+  }
+  @media only screen and (max-width: 650px) {
+    p {
+      grid-column: span 12;
+    }
+    .radio {
+      grid-column: span 12;
+    }
+    input, select {
+      width: 100%;
+    }
+    .tab-background {
+      padding: 24px;
+    }
+    .buttonsNP {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    .buttonsNP button {
+      width: 100%;
+    }
+    .buttonsNP button:nth-child(1) {
+      order: 2;
+    }
+    .buttonsNP button:nth-child(2) {
+      order: 1;
+    }
+  }/*# sourceMappingURL=form.css.map */

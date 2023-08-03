@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <title>Document</title>
+</head>
+<body>
+
+   <!-- FORM START HERE -->
+   <div class="loading" id="form-loading">
+    <div class="background-s"></div>
+    <div class="maxw container">
+       <div class="maxw-inner">
+          <div class="loader">
+             <div class="loader-wheel"></div>
+             <h3 class="loader-text "></h3>
+          </div>
+       </div>
+    </div>
+</div>
+<div class="error-1" id="form-error">
+    <div class="background-s"></div>
+    <div class="maxw container" style="position: relative">
+       <div class="maxw-inner">
+          <div class="img-holder">
+             <img src="https://pragmatic.hr/f-tours/wp-content/uploads/2023/07/Red_X.svg.png" alt="">
+          </div>
+          <h4>Došlo je do greške</h4>
+          <div class="plarge">Vaša prijava nije uspješno poslana. Pokušajte kasnije.</div>
+          <button class="upit-button-close" id="form-error-button-close" enabled>Zatvori</button>
+       </div>
+    </div>
+</div>
+<div class="success" id="form-success">
+    <div class="background-s"></div>
+    <div class="maxw container" style="position: relative">
+       <div class="maxw-inner">
+          <div class="img-holder">
+             <img src="https://pragmatic.hr/f-tours/wp-content/uploads/2023/06/PaperPlane.png" alt="">
+          </div>
+          <h4>Vaš upit je poslan</h4>
+          <div class="plarge">Uskoro ćemo vam se povratno javiti s najboljom
+             ponudom za odabrani izlet.
+          </div>
+          <button class="upit-button-close" id="form-success-button-close" enabled>Zatvori</button>
+       </div>
+    </div>
+</div>
+<div class="lng-popup">
+    <div class="background"></div>
+    <div class="maxw container">
+       <div class="maxw-inner">
+          <div class="inner-title-lng">Odaberite jezik</div>
+          <div class="buttons">
+             <button enabled>English</button>
+             <button disabled>Hrvatski</button>
+          </div>
+          <div class="close-lng">
+          </div>
+       </div>
+    </div>
+</div>
+<section>
+    <form id="regForm" class="maxw grid container" autocomplete="on">
+       <h2 class="form-check-flex">PROVJERA PODATAKA</h2>
+       <p class="full bold form-check-flex"><b>*Ugovaratelj/Putnik je odgovoran za ispravnost popunjenih
+          podataka*</b>
+       </p>
+       <p class="full blue form-check-flex">Molimo Vas provjerite ispravnost prethodno popunjenih podataka.</p>
+       <p class="full blue form-check-flex">Ako ste suglasni sa popunjenim podacima označite na dnu stranice
+          Pošalji prijavu.
+       </p>
+       <h2 class="form-check-none">Prijava za školsko putovanje</h2>
+       <div class="steps form-check-none">
+          <div class="step">Korak 1</div>
+          <div class="step">Korak 2</div>
+          <div class="step">Korak 3</div>
+          <div class="step">Korak 4</div>
+       </div>
+       <!-- One "tab" for each step in the form: -->
+       <div class="tab grid">
+          <p class="full">
+             <label for="sifra">Šifra aranžmana <u>*</u></label>
+             <input placeholder="Popunite šifru aranžmana i potvrdite „enter/OK“" id="sifra">
+          </p>
+          <p id="search-arangment-error" style="display: none">
+           </p>
+       </div>
+       <div class="tab tab-background grid">
+          <p>
+             <label for="skola">Škola</label>
+             <select id="skola">
+                <option value="" selected="selected" disabled="disabled">Odaberite Školu</option>
+                 <option value="Škola 1">Škola 1</option> 
+                <!-- <option value="Škola 2">Škola 2</option> -->
+             </select>
+             <span class="arrow"></span>
+          </p>
+          <p>
+             <label for="odrediste">Aranžman / odredište</label>
+             <select id="aranzman"  class="pdf-choose">
+                <option value="" selected="selected" disabled="disabled">Odaberite Aranžman / odredište</option>
+                 <option value="Odredište 1">Odredište 1</option> 
+                <!-- <option value="Odredište 2">Odredište 2</option> -->
+             </select>
+             <span class="arrow"></span>
+          </p>
+          <p>
+             <label for="razred">Razred <u>*</u></label>
+             <select id="razred">
+                <option value="" selected="selected" disabled="disabled">Odaberite Razred</option>
+                 <option value="Razred 1">Razred 1</option> 
+                <!-- <option value="Razred 2">Razred 2</option> -->
+             </select>
+             <span class="arrow"></span>
+          </p>
+          <p>
+             <label for="voditelj">Razrednik / voditelj</label>
+             <select id="voditelj">
+                <option value="" selected="selected" disabled="disabled">Odaberite Razrednik / voditelj</option>
+                 <option value="Voditelj 1">Voditelj 1</option> 
+                <!-- <option value="Voditelj 2">Voditelj 2</option> -->
+             </select>
+             <span class="arrow"></span>
+          </p>
+          <div class="checkbox">
+             <input type="checkbox" id="checklink" >
+             <label for="checklink"  class="psmall" >Označite polje i pročitajte/preuzmite program putovanja</label>
+          </div>
+          <div id="pdf-pop" class="hidden">
+            <div class="pdf-pop-inner"> 
+               <img src="https://pragmatic.hr/f-tours/wp-content/uploads/2023/07/ikona.png" alt="">
+            </div>
+         </div>
+       </div>
+       <div class="tab grid">
+          <div class="grid tab-background">
+             <h6>Podatci ugovaratelja</h6>
+             <p>
+                <label for="rprezime">Prezime ugovaratelja putovanja (roditelj/staratelj) <u>*</u></label>
+                <input name="rprezime" id="rprezime" placeholder="Popunite Prezime (npr. Horvat)">
+             </p>
+             <p>
+                <label for="rime">Ime ugovaratelja putovanja (roditelj/staratelj) <u>*</u></label>
+                <input name="rime" id="rime" placeholder="Popunite Ime (npr. Ante)">
+             </p>
+             <p>
+                <label for="rtel">Mobitel ugovaratelja putovanja <u>*</u></label>
+                <input type="tel" value="" name="rtel" id="rtel" placeholder="Popunite tel (npr. +38598123456)">
+             </p>
+             <p>
+                <label for="remail">E-mail ugovaratelja putovanja <u>*</u></label>
+                <input name="remail" id="remail" placeholder="Popunite E-mail (npr. ivo.ivic@gmail.com)">
+             </p>
+          </div>
+          <div class="grid tab-background tab-background2">
+             <h6>Podatci putnika</h6>
+             <p>
+                <label for="prezime">Prezime putnika <u>*</u></label>
+                <input name="pprezime" id="pprezime" placeholder="Popunite prezime (npr. HORVAT)">
+             </p>
+             <p>
+                <label for="pime">Ime putnika <u>*</u></label>
+                <input name="pime" id="pime" placeholder="Popunite ime (npr. ANTE)">
+             </p>
+             <p>
+                <label for="padresa">Adresa putnika <u>*</u></label>
+                <input name="padresa" id="padresa" placeholder="Popunite svoju adresu (npr. Horvatova 1)">
+             </p>
+             <p>
+                <label for="pgrad">Grad/mjesto putnika <u>*</u></label>
+                <input name="pgrad" id="pgrad" placeholder="Popunite svoj grad">
+             </p>
+             <p>
+                <label for="ppostanski">Poštanski broj putnika <u>*</u></label>
+                <input name="ppostanski" id="ppostanski" placeholder="Popunite svoj poštanski broj">
+             </p>
+             <p>
+                <label for="pdrzava">Država putnika<u>*</u></label>
+                <select id="pdrzava">
+                   <option value="HR" selected="selected" >HR</option>
+                   <option value="Škola 1">Drzava1</option> 
+                   <!-- <option value="Škola 2">Drzava2</option> -->
+                </select>
+                <span class="arrow"></span>
+             </p>
+             <!-- 
+                <p>
+                    <label  for="pdrzava"  >Država putnika<u>*</u></label>
+                    <input name="pdrzava" id="pdrzava" placeholder="Popunite svoju državu">
+                </p>
+                -->
+             <p>
+                <label for="prodenje">Datum rođenja putnika<u>*</u></label>
+                <input id="prodenje" type="text" name="prodenje" placeholder="Dodajte datum rođenja">
+             </p>
+             <fieldset id="pspol" class="radio">
+                <label for="">Spol <u>*</u></label>
+                <div class="big">
+                   <input type="radio" value="M" name="spol" id="spolM">
+                   <label  class="pmedium" for="spolM">M</label>
+                   <input type="radio" value="Ž" name="spol" id="spolZ">
+                   <label class="pmedium" for="spolZ">Ž</label>
+                </div>
+             </fieldset>
+          </div>
+       </div>
+       <div class="tab grid">
+          <!-- IMPORTANT enable this code bellow and remove other code for this radios - fix css -->
+          <fieldset id="vrstaputneisprave" class="radio full">
+             <label for="">Vrsta putne isprave putnika </label>
+             <div class="big">
+                <input type="radio" value="P" name="vrstaputneisprave" id="radioPutovnica">
+                <label for="radioPutovnica" class="pmedium">Putovnica</label>
+                <input type="radio" value="0" name="vrstaputneisprave" id="radioOsobna">
+                <label class="pmedium" for="radioOsobna">Osobna iskaznica</label>
+             </div>
+          </fieldset>
+          <p>
+             <label for="brojputneisprave">Broj putne isprave putnika</label>
+             <input placeholder="Popunite broj putne isprave" name="brojputneisprave" id="brojputneisprave">
+          </p>
+          <p>
+             <label for="datumputneisprave">Putna isprava vrijedi do</label>
+             <input type="text" id="datumputneisprave" name="datumputneisprave" placeholder="Dodajte datum ">
+          </p>
+          <p class="full blue form-check-none">Za putovanja u inozemstvo potrebno dostaviti broj važeće putne
+             isprave s kojom će se putovati i do kada vrijedi
+             <br> (najkasnije 30 dana prije polaska!)
+          </p>
+          
+          <p class="full">
+             <label for="mputnika">Mobitel putnika <u>*</u></label>
+             <input name="mputnika" id="mputnika" type="tel" value=""  class="mt-1" placeholder="Popunite tel (npr. +38598123456)">
+          </p>
+          <p class="full">
+             <label for="eputnika">E-mail putnika <u>*</u></label>
+             <input name="eputnika" id="eputnika" placeholder="Popunite E-mail (npr. ivo.ivic@gmail.com)">
+          </p>
+          <p class="full">
+             <label for="">Način plaćanja <u>*</u></label>
+          </p>
+          <div class="opis"> <b>A (cijena s popustom)</b>-Uplata cjelokupnog iznosa aranžmana jednokratno
+             novčanicama, internet/mobilnim bankarstvom ili uplatnicom koju dostavlja agencija (elektronskom
+             poštom) s datumom dospijeća naznačenim na aranžmanu <br>
+             <b>B (cijena s popustom)</b>-Uplata rezervacije, te ostatka iznosa na mjesečne obroke uplatnicama
+             koje dostavlja agencija (elektronskom poštom) s datumom dospijeća naznačenim na aranžmanu <br>
+             <b>C (osnovna cijena)</b>-Uplata cjelokupnog iznosa aranžmana jednokratno ili obročno debitnim ili
+             kreditnim karticama (max 12 obroka) do datuma naznačenog na aranžmanu
+          </div>
+          <p class="full">
+             <select name="nacinplacanja" id="nacinplacanja" oninput="this.className = ''">
+                <option value="" selected="selected" disabled="disabled">Odaberite način plaćanja</option>
+                 <option value="A">A</option> 
+                <!-- <option value="B">B</option> -->
+                <!-- <option value="C">C</option> -->
+             </select>
+             <span class="arrow"></span>
+          </p>
+          <div class="opis form-check-none">
+             <h6>RODITELJSKA PRIVOLA ZA UPRAVLJANJE OSOBNIM PODACIMA</h6>
+             <b> Izjavljujem da privolu dajem dobrovoljno, da mi je detaljno pojašnjena namjera korištenja osobnih podataka djeteta u svrhe iz ove privole 
+             kao i moje pravo da se predmetnoj obradi usprotivim te da ova privola predstavlja izričitu privolu sukladno važećim zakonskim propisima koji
+             uređuju zaštitu osobnih podataka te da je uporaba osobnih podataka djeteta dozvoljena na opisani način i u zadanom opsegu. </b>
+             <div class="show-more-text">Ja, kao nositelj roditeljske skrbi maloljetnika suglasan sam da Agencija obrađuje osobne podatke putnika 
+                (ime i prezime, datum rođenja, broj putnog dokumenta) mog djeteta u slučaju kada je to neophodno za realizaciju usluge smještaja, prijevoza, osiguranja
+                i ulaznica za posjete muzejima, te da se osobni podaci: ime, prezime i datum rođenja mogu proslijediti društvima navedenim u paket aranžmanu. Osobni 
+                podaci će se koristiti samo u prethodno navedene svrhe i čuvat će se sukladno zakonskim i regulatornim propisima Opće uredbe o zaštiti osobnih podataka 
+                (GDPR 2016/679), odnosno u trajanju od 5 godina od završetka usluge, osim ako dulji vremenski period čuvanja osobnih podataka nije određen važećim nacionalnim 
+                ili europskim propisima. <br>
+                Opoziv suglasnosti je moguće ostvariti na način da se pošalje obavijest o opozivu na e-mail adresu desk@f-tours.hr ili na adresu Destinations F-tours d.o.o., 
+                Trg Hrvatske bratske zajednice 2, 21000 Split.  
+             </div>
+             <div id="show-more">Prikaži više</div>
+          </div>
+          <div class="checkbox checkbox3 form-check-none">
+             <input type="checkbox" id="SuglasC">
+             <label class="psmall" for="SuglasC">Slažem se s privolom za upravljanje osobnim podatcima</label>
+          </div>
+          <!-- IMPORTANT enable this code bellow and remove other code for this radios - fix css -->
+          <fieldset id="suglas" class="radio full form-check-none">
+             <b> Suglasan sam da se fotografije/video snimke/audio snimke mog djeteta sa putovanja objave na
+             društvenim mrežama Agencije</b>
+             <div class="big">
+                <input type="radio" name="suglas" value="Da" id="radioDa">
+                <label for="radioDa" class="pmedium">Da</label>
+                <input type="radio" name="suglas" value="Ne" id="radioNe">
+                <label class="pmedium" for="radioNe">Ne</label>
+             </div>
+          </fieldset>
+          <div class="checkbox checkbox3 form-check-none">
+             <input type="checkbox" id="SuglasC2">
+             <label class="psmall" for="SuglasC2"> Pročitao/la
+             sam i prihvaćam opće uvjete </label>
+          </div>
+          <div class="opis form-check-none">
+             <b>Slanjem ove prijave Pošiljatelj je potvrdio da je upoznat sa detaljima aranžmana i Općim uvjetima
+             poslovanja putničke agencije Destinations F-tours d.o.o. i dao je osobnu/roditeljsku privolu za
+             upravljanje osobnim podacima te je potvrdio da su dostavljeni podaci istiniti.</b>
+          </div>
+       </div>
+       <div class="buttonsNP">
+          <button type="button" id="prevBtn" class="previous" onclick="nextPrev(-1)">Prethodni korak</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Sljedeći korak</button>
+          <button type="button" id="submitBtn">Pošalji prijavu</button>
+       </div>
+       <!-- Circles which indicates the steps of the form: -->
+    </form>
+</section>
+    <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/form-srednje.js"></script>
+    <script>
+        flatpickr("#date", {});
+    </script>
+    
+</body>
+</html>
