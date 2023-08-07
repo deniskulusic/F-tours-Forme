@@ -34,8 +34,8 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length-1 && n==1) {
     //...the form gets submitted:
+    x[1].style.display = "grid";
     x[2].style.display = "grid";
-    x[3].style.display = "grid";
     y.classList.add("form-check");
     document.getElementById("prevBtn").style.display = "none";
     var nextb=document.getElementById("nextBtn")
@@ -66,21 +66,13 @@ for( var j=0;j<closeform.length;j++){
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y,z,zx,yx,xy, i, valid = true;
+  var x, y,yx,xy, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].querySelectorAll("input , select");
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   var validnum = /^[\+]?[0-9]{3}[(][0-9]{1}?[)][0-9]{2}[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+  
   if(currentTab==1){
-    z=x[currentTab].querySelector(".checkbox input");
-    zx=x[currentTab].querySelector(".checkbox label");
-    if(z.checked==false){
-        valid = false;
-        zx.className += " invalid";
-    }
-    
-  }
-  if(currentTab==2){
     yx=x[currentTab].querySelectorAll('input[name="spol"]');
     xy=x[currentTab].querySelectorAll(".big label");
     if(!(yx[0].checked ||yx[1].checked)){
@@ -91,7 +83,7 @@ function validateForm() {
     }
     
   }
-  if(currentTab==3){
+  if(currentTab==2){
    var qw=x[currentTab].querySelectorAll('input[name="vrstaputneisprave"]');
    var tw=x[currentTab].querySelectorAll('input[name="suglas"]');
    var wq=x[currentTab].querySelectorAll(".big label");
@@ -176,13 +168,9 @@ for(i=0;i<select.length;i++){
 }
 
 var x = document.getElementsByClassName("tab");
-  var z=x[1].querySelector(".checkbox input");
-  var zx=x[1].querySelector(".checkbox label");
-  z.addEventListener('click',function(){
-    zx.classList.remove("invalid");
-  });
-  var yx=x[2].querySelectorAll('input[name="spol"]');
-   var xy=x[2].querySelectorAll(".big label");
+
+  var yx=x[1].querySelectorAll('input[name="spol"]');
+   var xy=x[1].querySelectorAll(".big label");
       for(var j=0;j<yx.length;j++){
         yx[j].addEventListener('click',function(){
           xy[0].classList.remove("invalid")
@@ -190,9 +178,9 @@ var x = document.getElementsByClassName("tab");
           
         });
       }
-      var qw=x[3].querySelectorAll('input[name="vrstaputneisprave"]');
-      var tw=x[3].querySelectorAll('input[name="suglas"]');
-      var wq=x[3].querySelectorAll(".big label");
+      var qw=x[2].querySelectorAll('input[name="vrstaputneisprave"]');
+      var tw=x[2].querySelectorAll('input[name="suglas"]');
+      var wq=x[2].querySelectorAll(".big label");
        for(var j=0;j<qw.length;j++){
         qw[j].addEventListener('click',function(){
           wq[0].classList.remove("invalid")
@@ -207,8 +195,8 @@ var x = document.getElementsByClassName("tab");
           
         });
       }
-      var zq=x[3].querySelectorAll(".checkbox input");
-      var zw=x[3].querySelectorAll(".checkbox label");
+      var zq=x[2].querySelectorAll(".checkbox input");
+      var zw=x[2].querySelectorAll(".checkbox label");
       zq[0].addEventListener('click',function(){
         zw[0].classList.remove("invalid");
       });
@@ -233,14 +221,4 @@ var x = document.getElementsByClassName("tab");
 
      
       
-      var PdfDiv=document.querySelector(".pdf-choose");
-      const iconElement =  document.querySelector('#pdf-pop');
-     
-     if(PdfDiv.value!=""){
-      iconElement.classList.remove("hidden");
       
-      }
-     PdfDiv.addEventListener('input',function(){
-      iconElement.classList.remove("hidden");
-      
-    });

@@ -221,7 +221,8 @@
   }
   
   .step {
-    width: 25%;
+    box-sizing: border-box;
+    width: 100%;
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
