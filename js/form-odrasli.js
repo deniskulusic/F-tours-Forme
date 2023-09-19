@@ -73,15 +73,32 @@ function validateForm() {
   var validnum = /^[\+]?[0-9]{3}[(][0-9]{1}?[)][0-9]{2}[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
   
   if(currentTab==1){
-    yx=x[currentTab].querySelectorAll('input[name="spol"]');
+    yx=x[currentTab].querySelectorAll('input[name="spol"] , input[name="jednokratna"] , input[name="zdravstveno"] , input[name="paket"]');
     xy=x[currentTab].querySelectorAll(".big label");
     if(!(yx[0].checked ||yx[1].checked)){
       valid = false;
-      for(var j=0;j<yx.length;j++){
+      for(var j=0;j<2;j++){
         xy[j].className += " invalid";
       }
     }
-    
+    if(!(yx[2].checked ||yx[3].checked)){
+      valid = false;
+      for(var j=2;j<4;j++){
+        xy[j].className += " invalid";
+      }
+    }
+    if(!(yx[4].checked ||yx[5].checked)){
+      valid = false;
+      for(var j=4;j<6;j++){
+        xy[j].className += " invalid";
+      }
+    }
+    if(!(yx[6].checked ||yx[7].checked)){
+      valid = false;
+      for(var j=6;j<8;j++){
+        xy[j].className += " invalid";
+      }
+    }
   }
   if(currentTab==2){
    var qw=x[currentTab].querySelectorAll('input[name="vrstaputneisprave"]');
@@ -169,12 +186,33 @@ for(i=0;i<select.length;i++){
 
 var x = document.getElementsByClassName("tab");
 
-  var yx=x[1].querySelectorAll('input[name="spol"]');
+  var yx=x[1].querySelectorAll('input[name="spol"] , input[name="jednokratna"] , input[name="zdravstveno"] , input[name="paket"]');
    var xy=x[1].querySelectorAll(".big label");
-      for(var j=0;j<yx.length;j++){
+      for(var j=0;j<2;j++){
         yx[j].addEventListener('click',function(){
           xy[0].classList.remove("invalid")
           xy[1].classList.remove("invalid")
+          
+        });
+      }
+      for(var j=2;j<4;j++){
+        yx[j].addEventListener('click',function(){
+          xy[2].classList.remove("invalid")
+          xy[3].classList.remove("invalid")
+          
+        });
+      }
+      for(var j=4;j<6;j++){
+        yx[j].addEventListener('click',function(){
+          xy[4].classList.remove("invalid")
+          xy[5].classList.remove("invalid")
+          
+        });
+      }
+      for(var j=6;j<8;j++){
+        yx[j].addEventListener('click',function(){
+          xy[6].classList.remove("invalid")
+          xy[7].classList.remove("invalid")
           
         });
       }

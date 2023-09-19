@@ -130,16 +130,13 @@
                 </select>
                 <span class="arrow"></span>
              </p>
-             <!-- 
-                <p>
-                    <label  for="pdrzava"  >Država putnika<u>*</u></label>
-                    <input name="pdrzava" id="pdrzava" placeholder="Popunite svoju državu">
-                </p>
-                -->
+             
+            
              <p>
                 <label for="prodenje">Datum rođenja putnika<u>*</u></label>
                 <input id="prodenje" type="text" name="prodenje" placeholder="Dodajte datum rođenja">
              </p>
+             
              <fieldset id="pspol" class="radio">
                 <label for="">Spol <u>*</u></label>
                 <div class="big">
@@ -149,6 +146,37 @@
                    <label class="pmedium" for="spolZ">Ž</label>
                 </div>
              </fieldset>
+             <p>
+               <label for="posoba">Osoba s kojom dijelite sobu <u>*</u></label>
+               <input name="posoba" id="posoba" placeholder="Popunite osobu s kojom dijelite sobu">
+            </p>
+            <fieldset id="pjednikratna" class="radio">
+               <label for="">Uzimam jednokratnu sobu <u>*</u></label>
+               <div class="big">
+                  <input type="radio" value="DA" name="jednokratna" id="jednokratnada">
+                  <label  class="pmedium" for="jednokratnada">DA</label>
+                  <input type="radio" value="NE" name="jednokratna" id="jednokratnane">
+                  <label class="pmedium" for="jednokratnane">NE</label>
+               </div>
+            </fieldset>
+            <fieldset id="pzdravstveno" class="radio">
+               <label for="">Uzimam putno zrdavstveno osiguranje <u>*</u></label>
+               <div class="big">
+                  <input type="radio" value="DA" name="zdravstveno" id="zdravstvenoda">
+                  <label  class="pmedium" for="zdravstvenoda">DA</label>
+                  <input type="radio" value="NE" name="zdravstveno" id="zdravstvenone">
+                  <label class="pmedium" for="zdravstvenone">NE</label>
+               </div>
+            </fieldset>
+            <fieldset id="ppaket" class="radio">
+               <label for="">Uzimam paket puno zdravstveno osiguranje i osiguranje od rizika otkaza <u>*</u></label>
+               <div class="big">
+                  <input type="radio" value="DA" name="paket" id="paketda">
+                  <label  class="pmedium" for="paketda">DA</label>
+                  <input type="radio" value="NE" name="paket" id="paketne">
+                  <label class="pmedium" for="paketne">NE</label>
+               </div>
+            </fieldset>
           </div>
        </div>
        <div class="tab grid">
